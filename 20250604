@@ -1,0 +1,46 @@
+#include<cstdio>
+
+using namespace std;
+
+int main()
+{
+	int i;
+	long long l;
+	float d;
+	char c;
+	char s[100];
+	scanf("%c %d %lld %f %s",&c,&i,&l,&d,s);
+	printf("%s,%.1lf,%lld,%d,%c",s,d,l,i,c);
+}#include<cstdio>
+
+using namespace std;
+
+int main()
+{
+	int h,m,s,a,n;
+	
+	scanf("%d %d %d %d",&h,&m,&s,&a);
+	n=h*3600+m*60+s-a;
+	h=n/3600;
+	n%=3600;
+	m=n/60;
+	s=n%60;
+	printf("%d %d %d",h,m,s);
+	printf("\nProcess exited after 2.224 seconds with return value 0\n계속하려면 아무 키나 누르십시오 . . .")
+}#include<cstdio>
+
+using namespace std;
+
+int main()
+{
+	int n,c=0;
+	scanf("%d",&n);
+	c+=n%10;
+	n/=10;
+	c+=n%10;
+	n/=10;
+	c+=n%10;
+	n/=10;
+	c+=n;
+	printf("%d",c);
+}
