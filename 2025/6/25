@@ -1,0 +1,142 @@
+#include<stdio.h>
+
+int main()
+{
+	int a[10], b[10],as=0,bs=0;
+	char lw='D';
+	for(int i=0;i<10;i++)
+	{
+		scanf("%d",&a[i]);
+		
+	}
+	for(int i=0;i<10;i++)
+	{
+		
+		scanf("%d",&b[i]);
+	}
+	for(int i=0;i<10;i++)
+	{
+		if(a[i]>b[i])
+		{
+			as+=3;
+			lw='A';
+		}
+		if(a[i]<b[i])
+		{
+			bs+=3;
+			lw='B';
+		}
+		if(a[i]==b[i])
+		{
+			as++;
+			bs++;
+		}
+		
+	}
+	printf("%d %d\n",as, bs);
+	if(as>bs)
+	{
+		printf("A");
+	}
+	if(bs>as)
+	{
+		printf("B");
+	}
+	if(as==bs)
+	{
+		if(lw=='D')
+		{
+			printf("D");
+		}
+		else if(lw=='A')
+		{
+			printf("A");
+		}
+		else
+		{
+			printf("B");
+		}
+	}
+}
+#include<stdio.h>
+
+int main()
+{
+	int arr[101][101], m, n, wy,wx;
+	scanf("%d %d",&n, &m);
+	for(int i=0;i<m;i++)
+	{
+		for(int j=0;j<n;j++)
+		{
+			scanf("%d",&arr[i][j]);
+		}
+	}
+	for(int i=0;i<m;i++)
+	{
+		for(int j=0;j<n;j++)
+		{
+			if(arr[i][j]==2)
+			{
+				
+				wy=i;
+				wx=j;
+				
+			}
+		}
+	}
+	for(int i=0;i<m;i++)
+	{
+		for(int j=0;j<n;j++)
+		{
+			if(arr[i][j]==2){
+				if(arr[i+1][j]==0)
+				{
+					if(i+1<m)
+					{
+						wy=i+1;
+						wx=j;
+						arr[i+1][j]=2;
+					}
+				}
+				else if(arr[i][j+1]==0)
+				{
+					if(i+1<n)
+					{
+						wy=i;
+					wx=j+1;
+					arr[i][j+1]=2;
+					}
+					
+				}
+			}
+			
+			
+		}
+	}
+	
+	printf("\n%d %d",wx, wy);
+}
+#include<stdio.h>
+#include<vector>
+using namespace std;
+
+int main()
+{
+	vector<int> v[101];
+	int m, n, a, b;
+	scanf("%d %d", &n, &m);
+	for(int i=0;i<m;i++)
+	{
+		scanf("%d %d", &a, &b);
+		v[a].push_back(b);
+	}
+	for(int i=1;i<=n;i++)
+	{
+		for(int j=0;j<v[i].size();j++)
+		{
+			printf("%d ",v[i][j]);
+		}
+		printf("\n");
+	}
+	return 0;
+}
