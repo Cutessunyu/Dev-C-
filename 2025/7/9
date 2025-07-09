@@ -1,0 +1,57 @@
+#include<stdio.h>
+int arr[1001];
+int f(int s, int t)
+{
+	if(t==0) return s;
+	return f(arr[s],t-1);
+
+	
+}
+
+int main()
+{
+	int n, res=0, t, s;
+	scanf("%d %d %d",&n, &s, &t);
+	for(int i=1;i<=n;i++){
+		scanf("%d",&arr[i]);
+	}
+	printf("%d", f( s, t));
+}
+
+#include<stdio.h>
+int a(int n)
+{
+	return (n-2)*(n+1)*n/2;
+}
+
+int b(int n)
+{
+	return (n*n*n)-((n-1)*(n-1)*(n-1));
+}
+
+int c(int n)
+{
+	return (3*n*n*n)-(n*n)-(3*n);
+}
+
+int main()
+{
+	int n, m;
+	scanf("%d %d",&n, &m);
+	if (m==1)printf("%d", a(n));
+	if (m==2)printf("%d", b(n));
+	if (m==3)printf("%d", c(n));
+}
+
+#include<stdio.h>
+int decom(int n)
+{
+	if(n==0) return 0;
+	return n%10+decom(n/10);
+}
+
+int main(){
+	int n;
+	scanf("%d",&n);
+	printf("%d",decom(n));
+}
