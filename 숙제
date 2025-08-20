@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<iostream>
+#include<string>
+using namespace std;
+
+struct book{
+	string s;
+	int g, u;
+};
+
+int main()
+{
+	int n;
+	scanf("%d",&n);
+	 book b[1001];
+	for(int i=0;i<n;i++)
+	{
+		cin>>b[i].s;
+		scanf("%d %d",&b[i].g,&b[i].u);
+	}
+	string w;
+	cin>>w;
+	for(int i=0;i<n;i++)
+	{
+		if(w==b[i].s)
+		{
+			printf("%d %d",b[i].g,b[i].u);
+			break;
+		}
+	}
+}
