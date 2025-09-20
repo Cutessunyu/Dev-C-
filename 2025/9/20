@@ -1,0 +1,75 @@
+#include<stdio.h>
+#include<algorithm>
+using namespace std;
+int a[1000000]={0,};
+int main()
+{
+	int n, c=0, m=0, v;
+	scanf("%d", &n);
+	for(int i=0;i<n;i++)
+	{
+		scanf("%d", &a[i]);
+	}
+	sort(a, a+n);
+	for(int i=1;i<n-1;i++){
+		if(a[i]==a[i-1]){
+			c++;
+		}
+		else if(c>m){
+			m=c;
+			v=a-1;
+			c=0;
+		}
+		else
+		{
+			c=0;
+		}
+	}
+	printf("%d", v);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include<stdio.h>
+#include<algorithm>
+using namespace std;
+
+struct student{
+	int c[100];
+	int s[100];
+	int g[100];
+};
+bool cmp(int left, int right){
+	return right>left
+}
+
+int main()
+{
+	int n, arr[3];
+	student d[100];
+	scanf("%d", &n);
+	for(int i=0;i<n;i++){
+		scanf("%d %d %d",&student.c[i], &student.s[i], &student.g[i]);
+	}
+	sort(d, d+n, cmp);
+	printf("%d",, student.s[0], student.g[0]);
+	arr[0]=student.c[0];
+	printf("%d",student.c[1], student.s[1], student.g[1]);
+	arr[1]=student.c[1];
+	for(int i=2;i<n;i++){
+		if(student.c[i]!=student.c[0]||student.c[i]!=student.c[1]){
+			printf("%d",student.c[i], student.s[i], student.g[i]);
+		}
+	}
+}
